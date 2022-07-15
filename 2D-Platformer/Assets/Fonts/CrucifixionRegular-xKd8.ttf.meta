@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 0c1f98a7f4c86b74a9a39abece5bd185
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Crucifixion
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d262672057999ad4787c2100ef2e2aa5, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
