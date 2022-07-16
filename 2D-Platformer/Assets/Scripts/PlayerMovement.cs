@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
 
     //[SerializeField] private AudioSource jumpSoundEffect;
 
-    // Start is called before the first frame update
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,11 +27,11 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     private void Update()
     {
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        coll.offset = new Vector2(dirX * coll.offset.x, coll.offset.y);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
