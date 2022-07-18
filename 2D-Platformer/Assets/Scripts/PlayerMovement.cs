@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
 
     private float dirX = 0f;
     private float dirY = 0f;
+    private bool isOnGround = false;
+    [SerializeField] private int amountOfExtraJumps = 1;
+    private int extraJumpsLeft;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
 
@@ -26,28 +29,36 @@ public class PlayerMovement : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        extraJumpsLeft = amountOfExtraJumps;
     }
 
     private void Update()
     {
         dirX = Input.GetAxisRaw("Horizontal");
         dirY = Input.GetAxisRaw("Vertical");
-        if (dirY == -1)
+        if (IsGrounded())
         {
-
+            extraJumpsLeft = amountOfExtraJumps;
+            isOnGround = true;
         }
         else
+        {
+            isOnGround = false;
+        }
+        if (dirY != -1)
         {
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         }
         coll.offset = new Vector2(dirX * coll.offset.x, coll.offset.y);
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (Input.GetButtonDown("Jump") && extraJumpsLeft > 0)
         {
             //jumpSoundEffect.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            extraJumpsLeft--;
         }
 
+        IsGrounded();
         UpdateAnimationState();
     }
 
