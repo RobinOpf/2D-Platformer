@@ -12,10 +12,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
 
     private float dirX = 0f;
+    private float dirY = 0f;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
 
-    private enum MovementState { idle, running, jumping, falling }
+    private enum MovementState { idle, running, jumping, falling, crouching }
 
     //[SerializeField] private AudioSource jumpSoundEffect;
 
@@ -30,7 +31,15 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        dirY = Input.GetAxisRaw("Vertical");
+        if (dirY == -1)
+        {
+
+        }
+        else
+        {
+            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        }
         coll.offset = new Vector2(dirX * coll.offset.x, coll.offset.y);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
@@ -46,19 +55,22 @@ public class PlayerMovement : MonoBehaviour
     {
         MovementState state;
 
-        if (dirX > 0f)
+        flipChar();
+
+        if (dirY < 0f)
         {
-            state = MovementState.running;
-            sprite.flipX = false;
-        }
-        else if (dirX < 0f)
-        {
-            state = MovementState.running;
-            sprite.flipX = true;
+            state = MovementState.crouching;
         }
         else
         {
-            state = MovementState.idle;
+            if (dirX != 0f)
+            {
+                state = MovementState.running;
+            }
+            else
+            {
+                state = MovementState.idle;
+            }
         }
 
         if (rb.velocity.y > .1f)
@@ -76,5 +88,18 @@ public class PlayerMovement : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+    }
+
+    private void flipChar()
+    {
+        if (dirX > 0f)
+        {
+            sprite.flipX = false;
+        }
+        else if (dirX < 0f)
+        {
+            sprite.flipX = true;
+        }
+
     }
 }
