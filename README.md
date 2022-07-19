@@ -28,9 +28,19 @@ My first 2D-Platformer
     - Amount displayed on screen
 
 - ### Traps
+
   - Traps
     - kills on ColliderEnter
     - One Live
     - Level Restarts immediatly after 1 Second
   - Spikes (_Prefab_)
   - OutOfBounds (_Prefab_)
+  - Saw (_Prefab_)
+    - Can use Waypoints
+    
+- ### Worldbuilding
+  - Tilemap
+    - Wall --- for Walljump
+    - Ground --- for reload doublejump and detect if can Jump
+  - Moving Platform 
+    - Can use 2 or more Waypoints
