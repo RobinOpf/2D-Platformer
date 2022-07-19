@@ -120,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
         if (dirY < 0f)
         {
             state = MovementState.crouching;
+            FlipChar(isFacingRight);
         }
         else
         {
