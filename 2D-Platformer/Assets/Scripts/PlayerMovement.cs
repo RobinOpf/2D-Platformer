@@ -24,13 +24,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 standardCharScale;
 
     [Header("Wall Jump")]
-    [SerializeField] private float wallJumpTime = 0.2f;
     [SerializeField] private float wallSlideSpeed = 0.3f;
     [SerializeField] private float wallDistance = 0.6f;
     [SerializeField] private float afterWallJumpDelay = 0.6f;
     private bool isWallSliding = false;
     private RaycastHit2D WallCheckHit;
-    private float jumpTime;
     private float cantMoveTime = 0f;
 
     
@@ -80,9 +78,8 @@ public class PlayerMovement : MonoBehaviour
         if (WallCheckHit && !isOnGround && dirX != 0)
         {
             isWallSliding = true;
-            jumpTime = Time.time + wallJumpTime;
         }
-        else if (jumpTime < Time.time)
+        else
         {
             isWallSliding = false;
         }
