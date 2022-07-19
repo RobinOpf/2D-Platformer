@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -86,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
             isWallSliding = false;
         }
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && Time.time > cantMoveTime)
         {
             if (isWallSliding)
             {
