@@ -10,6 +10,11 @@ public class MenuNavigation : MonoBehaviour
         SceneManager.LoadScene("Level " + level);
     }
 
+    public void GoToDebugWorld()
+    {
+        SceneManager.LoadScene("DebugWorld");
+    }
+
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
