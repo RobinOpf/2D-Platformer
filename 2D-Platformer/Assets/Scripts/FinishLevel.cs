@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class FinishLevel: MonoBehaviour
 {
     [SerializeField] private AudioSource BGMusic;
-    [SerializeField] private Rigidbody2D playerRB;
 
     private AudioSource finishSound;
     private Animator anim;

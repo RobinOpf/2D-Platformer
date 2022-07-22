@@ -1101,6 +1101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGMusic: {fileID: 1653599146}
+  playerRB: {fileID: 1497807147}
 --- !u!95 &947649542
 Animator:
   serializedVersion: 3
