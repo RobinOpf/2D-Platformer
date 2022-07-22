@@ -31,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
     private RaycastHit2D WallCheckHit;
     private float cantMoveTime = 0f;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioSource jumpSoundEffect;
+
     
 
     private enum MovementState { idle, running, jumping, falling, crouching }
@@ -92,14 +95,14 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(-Mathf.Sign(rb.velocity.x) * 5, jumpForce);
                 FlipChar(!isFacingRight);
                 extraJumpsLeft--;
-                //jumpSoundEffect.Play();
+                jumpSoundEffect.Play();
             }
             else if (extraJumpsLeft > 0)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 extraJumpsLeft--;
 
-                //jumpSoundEffect.Play();
+                jumpSoundEffect.Play();
             }
         }
 
