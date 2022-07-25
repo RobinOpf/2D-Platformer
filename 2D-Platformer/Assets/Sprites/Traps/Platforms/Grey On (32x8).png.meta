@@ -1,33 +1,33 @@
 fileFormatVersion: 2
-guid: e242b62e7e6caee439fa1d024a8fa5bb
+guid: 7e73d0165dccc3745b6d9f293e19161c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3932816638193255715
-    second: Brown On (32x8)_0
+      213: 3392405149061117267
+    second: Grey On (32x8)_0
   - first:
-      213: 113249620649802049
-    second: Brown On (32x8)_1
+      213: -5304968132175535521
+    second: Grey On (32x8)_1
   - first:
-      213: -3965723481977160693
-    second: Brown On (32x8)_2
+      213: 7205351277649062038
+    second: Grey On (32x8)_2
   - first:
-      213: -8422671310359681190
-    second: Brown On (32x8)_3
+      213: 1780132154582644755
+    second: Grey On (32x8)_3
   - first:
-      213: 6027122724756182200
-    second: Brown On (32x8)_4
+      213: 4111346552470372831
+    second: Grey On (32x8)_4
   - first:
-      213: 3059113826426795209
-    second: Brown On (32x8)_5
+      213: -2366525152842288464
+    second: Grey On (32x8)_5
   - first:
-      213: 4722360788381041880
-    second: Brown On (32x8)_6
+      213: -7495548665238613016
+    second: Grey On (32x8)_6
   - first:
-      213: -7345710839297778315
-    second: Brown On (32x8)_7
+      213: 4087310828085989819
+    second: Grey On (32x8)_7
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -47,7 +47,6 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
-  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -70,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -79,13 +78,9 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
-  flipbookRows: 1
-  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  ignorePngGamma: 0
-  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -115,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Brown On (32x8)_0
+      name: Grey On (32x8)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -129,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f1b4d0812a0bbc46930c942a83357ed
-      internalID: -3932816638193255715
+      spriteID: 945a7b8258ad6cf4999cb740d416ed40
+      internalID: 3392405149061117267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown On (32x8)_1
+      name: Grey On (32x8)_1
       rect:
         serializedVersion: 2
         x: 32
@@ -150,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 495d82b1c6479594db3235fb6e3cf7ec
-      internalID: 113249620649802049
+      spriteID: 86376bd93edb573499ee9aa83d198a79
+      internalID: -5304968132175535521
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown On (32x8)_2
+      name: Grey On (32x8)_2
       rect:
         serializedVersion: 2
         x: 64
@@ -171,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 161ab562e71e8cf41ab685ca081c8c85
-      internalID: -3965723481977160693
+      spriteID: 752f6e53a0c511a4b94c47768cc71889
+      internalID: 7205351277649062038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown On (32x8)_3
+      name: Grey On (32x8)_3
       rect:
         serializedVersion: 2
         x: 96
@@ -192,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdbe1cf63db6cb745a3148e6cfd706d9
-      internalID: -8422671310359681190
+      spriteID: e3dbfa5b5e7791d4c9516bae5fb404c9
+      internalID: 1780132154582644755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown On (32x8)_4
+      name: Grey On (32x8)_4
       rect:
         serializedVersion: 2
         x: 128
@@ -213,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb0afa4b7d958a64ea0c4f0fc26d4e89
-      internalID: 6027122724756182200
+      spriteID: 68ce48fad1023184f9d1631d5f438312
+      internalID: 4111346552470372831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown On (32x8)_5
+      name: Grey On (32x8)_5
       rect:
         serializedVersion: 2
         x: 160
@@ -234,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09dc1b7a40dcba0499692a384b5bf65d
-      internalID: 3059113826426795209
+      spriteID: 7c1d19ce01cc4294996abe7829800702
+      internalID: -2366525152842288464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown On (32x8)_6
+      name: Grey On (32x8)_6
       rect:
         serializedVersion: 2
         x: 192
@@ -255,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2ba88b9d5c10524bb960adf9d485311
-      internalID: 4722360788381041880
+      spriteID: 06426a03ee586064982ada18f78bde6b
+      internalID: -7495548665238613016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown On (32x8)_7
+      name: Grey On (32x8)_7
       rect:
         serializedVersion: 2
         x: 224
@@ -276,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11319983793eba34b92fa0b4a7ca6a6f
-      internalID: -7345710839297778315
+      spriteID: ad2a7610b6e47fa40af8b180c2d568d1
+      internalID: 4087310828085989819
       vertices: []
       indices: 
       edges: []

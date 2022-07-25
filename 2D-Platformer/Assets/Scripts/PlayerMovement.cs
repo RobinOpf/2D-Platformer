@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -56,39 +57,29 @@ public class PlayerMovement : MonoBehaviour
         dirY = Input.GetAxisRaw("Vertical");
         CheckIsGrounded();
         CheckIsFacingRight();
+        CheckIsOnWall();
+        CheckIsWallSliding();
+
+        //reset Jumps Left
         if (isOnGround)
         {
             extraJumpsLeft = amountOfExtraJumps;
         }
+
+        //Move Left & Right
         if (dirY != -1 && Time.time > cantMoveTime)
         {
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
             FlipChar(isFacingRight);
         }
+
+        //flip collision Box, depending on direction facing
         coll.offset = new Vector2(dirX * coll.offset.x, coll.offset.y);
 
-
-        //Wall Jump
-        if (dirX > 0f)
-        {
-            WallCheckHit = Physics2D.Raycast(transform.position, new Vector2(wallDistance, 0), wallDistance, wallJumpableWall);
-        }
-        else
-        {
-            WallCheckHit = Physics2D.Raycast(transform.position, new Vector2(-wallDistance, 0), wallDistance, wallJumpableWall);
-        }
-
-        if (WallCheckHit && !isOnGround && dirX != 0)
-        {
-            isWallSliding = true;
-        }
-        else
-        {
-            isWallSliding = false;
-        }
-
+        //Jump
         if (Input.GetButtonDown("Jump") && Time.time > cantMoveTime)
         {
+            //If wallsliding do Walljump
             if (isWallSliding)
             {
                 cantMoveTime = Time.time + afterWallJumpDelay;
@@ -97,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
                 extraJumpsLeft--;
                 jumpSoundEffect.Play();
             }
-            else if (extraJumpsLeft > 0)
+            else if (extraJumpsLeft > 0) //if is in Air, check if double jumps allowed and normally Jump
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 extraJumpsLeft--;
@@ -147,6 +138,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger("state", (int)state);
     }
 
+    //Checks
     private void CheckIsGrounded()
     {
         isOnGround = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
@@ -164,6 +156,32 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void CheckIsOnWall()
+    {
+        if (dirX > 0f)
+        {
+            WallCheckHit = Physics2D.Raycast(transform.position, new Vector2(wallDistance, 0), wallDistance, wallJumpableWall);
+        }
+        else
+        {
+            WallCheckHit = Physics2D.Raycast(transform.position, new Vector2(-wallDistance, 0), wallDistance, wallJumpableWall);
+        }
+    }
+
+    private void CheckIsWallSliding()
+    {
+        if (WallCheckHit && !isOnGround && dirX != 0)
+        {
+            isWallSliding = true;
+        }
+        else
+        {
+            isWallSliding = false;
+        }
+    }
+
+
+    //Flip Char depending on facing direction
     private void FlipChar(bool facingright)
     {
         if (facingright)
